@@ -4,6 +4,6 @@ firstName: Aneesh
 lastName: Kumar
 designation: MICROSOFT 365 SOLUTION ARCHITECT
 linikedIn: reandin
-active: true
+active: false
 company: Penthara
 ---
