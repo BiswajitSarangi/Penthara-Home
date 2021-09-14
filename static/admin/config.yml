@@ -1,7 +1,6 @@
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
-media_folder: static/img
 public_folder: /img
 collections:
   - label: "Who we are"
@@ -11,4 +10,19 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown"} 
+  - label: "Team Member"
+    name: "team"
+    folder: "content/team"
+    create: true
+    media_folder: "/images/members"
+    fields:
+      - {label: "Member Image", name: "memberImg", widget: "image", choose_url: true}
+      - {label: "First Name", name: "firstName", widget: "string"}
+      - {label: "Last Name", name: "lastName", widget: "string"}
+      - {label: "Designation", name: "designation", widget: "string"}
+      - {label: "LinkedIn", name: "linikedIn", widget: "string"}
+      - {label: "Active", name: "active", widget: "boolean"}
+      - {label: "Company", name: "company", widget: "hidden", default: "Penthara"}
+
+
