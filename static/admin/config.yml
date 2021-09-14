@@ -16,7 +16,7 @@ collections:
     name: "team"
     folder: "content/team"
     create: true
-    media_folder: "/images/members"
+    media_folder: "../../images/members"
     fields:
       - {label: "Member Image", name: "memberImg", widget: "image", choose_url: true}
       - {label: "First Name", name: "firstName", widget: "string"}
