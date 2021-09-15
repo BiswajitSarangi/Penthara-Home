@@ -49,7 +49,7 @@ export default function Home({data})
 
 export const query = graphql`
 query MyQuery {
-  whoweare: allMarkdownRemark {
+  whoweare: allMarkdownRemark(filter: {frontmatter: {category: {eq: "whoweare"}}}) {
     nodes {
       frontmatter {
         date
