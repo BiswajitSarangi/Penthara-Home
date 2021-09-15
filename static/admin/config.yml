@@ -48,7 +48,7 @@ collections:
     name: "footer"
     folder: "content/footer"
     create: true
-    slug: "{{name}}"
+    slug: "footer"
     media_folder: "../../images"
     fields:
       - {label: "India Location", name: "location_india", widget: "string"}
