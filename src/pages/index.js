@@ -1,6 +1,7 @@
 import { graphql } from "gatsby"
 import {GatsbyImage,getImage} from 'gatsby-plugin-image'
 import React from "react"
+import Footer from "../components/Footer";
 
 export default function Home({data}) 
 {
@@ -41,7 +42,8 @@ export default function Home({data})
           <div dangerouslySetInnerHTML = {{__html: testimonial.html}}></div>
         </div>
       ))}
-
+      <hr />
+      <Footer />
 
     </div>
   )
