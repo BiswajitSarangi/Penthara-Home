@@ -38,7 +38,7 @@ export default function Home({data})
           <GatsbyImage image = {getImage(testimonial.frontmatter.client_image.childImageSharp.gatsbyImageData)} />
           <h3>{testimonial.frontmatter.name}</h3>
           <h4>{testimonial.frontmatter.client_company + ", " + testimonial.frontmatter.client_designation}</h4>
-          <p dangerouslySetInnerHTML = {{__html: testimonial.html}}></p>
+          <div dangerouslySetInnerHTML = {{__html: testimonial.html}}></div>
         </div>
       ))}
 
