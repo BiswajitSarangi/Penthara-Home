@@ -6,7 +6,8 @@ export default function Home({data})
 {
   const whoweare_all_content = data.whoweare.nodes;
   const teams = data.teams.nodes;
-  console.log(teams);
+  const client_testimonials = data.testimonials.nodes;
+  console.log(client_testimonials);
 
   return(
     <div>
@@ -17,7 +18,9 @@ export default function Home({data})
           <div dangerouslySetInnerHTML = {{__html: whoweare.html}}></div>
         </div>
       ))}
+
       <hr/>
+
       <h2>Team Members</h2>
       {teams.map(team => (
         <div>
@@ -26,6 +29,20 @@ export default function Home({data})
           <p>{team.frontmatter.designation + ", " + team.frontmatter.isActive}</p>
         </div>
       ))}
+
+      <hr/>
+
+      <h2>Check what our clients say about us</h2>
+      {client_testimonials.map(testimonial => (
+        <div>
+          <GatsbyImage image = {getImage(testimonial.frontmatter.client_image.childImageSharp.gatsbyImageData)} />
+          <h3>{testimonial.frontmatter.name}</h3>
+          <h4>{testimonial.frontmatter.client_company + ", " + testimonial.frontmatter.client_designation}</h4>
+          <p dangerouslySetInnerHTML = {{__html: testimonial.html}}></p>
+        </div>
+      ))}
+
+
     </div>
   )
 }
@@ -55,6 +72,22 @@ query MyQuery {
           }
         }
       }
+      id
+    }
+  }
+  testimonials: allMarkdownRemark(filter: {frontmatter: {category: {eq: "testimonials"}}}) {
+    nodes {
+      frontmatter {
+        client_image {
+          childImageSharp {
+            gatsbyImageData(formats: AUTO, layout: FIXED, placeholder: BLURRED)
+          }
+        }
+        client_company
+        client_designation
+        name
+      }
+      html
       id
     }
   }

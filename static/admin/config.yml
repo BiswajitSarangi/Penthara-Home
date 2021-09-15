@@ -12,6 +12,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"} 
+
   - label: "Team Member"
     name: "team"
     folder: "content/team"
@@ -26,5 +27,19 @@ collections:
       - {label: "LinkedIn", name: "linikedIn", widget: "string"}
       - {label: "Active", name: "isActive", widget: "boolean"}
       - {label: "Company", name: "company", widget: "hidden", default: "Penthara"}
+
+  - label: "Testimonial"
+    name: "testimonials"
+    folder: "content/testimonials"
+    create: true
+    slug: "{{name}}"
+    media_folder: "../../images/clientsImg"
+    fields:
+      - {label: "Client Image", name: "client_image", widget: "image", choose_url: true}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Client Name", name: "name", widget: "string"}
+      - {label: "Company", name: "client_company", widget: "string"}
+      - {label: "Designation", name: "client_designation", widget: "string"}
+      - {label: "Category", name: "category", widget: "hidden", default: "testimonials"}
 
 
